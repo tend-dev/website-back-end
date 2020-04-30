@@ -1,0 +1,11 @@
+vich_uploader:
+    db_driver: orm
+    storage: flysystem
+    mappings:
+        post_image:
+            uri_prefix: '%post.image.path%'
+            upload_destination: post_logo_filesystem
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+            inject_on_load: true
+            delete_on_update: true
+            delete_on_remove: true

@@ -1,0 +1,10 @@
+# Read the documentation: https://github.com/1up-lab/OneupFlysystemBundle/tree/master/Resources/doc/index.md
+oneup_flysystem:
+    adapters:
+        post_logo_adapter:
+            local:
+                directory: '%kernel.project_dir%/public%post.image.path%'
+    filesystems:
+        post_logo_filesystem:
+            adapter: post_logo_adapter
+            mount: post_logo_filesystem

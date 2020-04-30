@@ -1,0 +1,48 @@
+easy_admin:
+  site_name: 'Care Admin'
+  # design:
+  #       form_theme:
+  #           - '@EasyAdmin/form/bootstrap_4.html.twig'
+  #           - '@VichUploader/Form/fields.html.twig'
+  # design:
+  #       assets:
+  #           css:
+  #               - '/bundles/easyadmin/app.css'
+  entities:
+    # List the entity class name you want to manage
+      Post:
+          class: App\Entity\Post
+          image_base_path: '%post.image.path%'
+          list:
+              fields:
+                  - { property: 'image', type: 'image', sortable: false }
+                  - 'title'
+                  - 'is_published'
+                  - 'created_at'
+              filters:
+                  - 'is_published'
+              sort: ['created_at', 'ASC']
+              max_results: 20
+          search:
+              sort: ['title', 'ASC']
+          form:
+              fields:
+                  - { property: 'title' }
+                  - { property: 'content' }
+                  - { property: 'imageFile', type: 'Vich\UploaderBundle\Form\Type\VichImageType' }
+                  - { property: 'is_published' }
+                  - { property: 'created_at' }
+      # User:
+      #     class: App\Entity\User
+      #     list:
+      #         fields:
+      #             - 'email'
+      #         sort: ['email', 'ASC']
+      #         max_results: 20
+      #     search:
+      #         sort: ['email', 'ASC']
+      #     form:
+      #         fields:
+      #             - { property: 'email' }
+      #             - { property: 'password' }
+    # - App\Entity\Post

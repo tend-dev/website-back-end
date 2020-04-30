@@ -1,0 +1,5 @@
+# api_actions:
+#     resource: ../../../src/Action/Api
+#     prefix: /api
+#     name_prefix: api_
+#     type: annotation
