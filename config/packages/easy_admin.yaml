@@ -1,5 +1,9 @@
 easy_admin:
   site_name: 'Care Admin'
+  design:
+    form_theme:
+        - '@EasyAdmin/form/bootstrap_4.html.twig'
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
   # design:
   #       form_theme:
   #           - '@EasyAdmin/form/bootstrap_4.html.twig'
@@ -28,7 +32,7 @@ easy_admin:
           form:
               fields:
                   - { property: 'title' }
-                  - { property: 'content' }
+                  - { property: 'content', type: 'fos_ckeditor' }
                   - { property: 'imageFile', type: 'Vich\UploaderBundle\Form\Type\VichImageType' }
                   - { property: 'is_published' }
                   - { property: 'created_at' }
