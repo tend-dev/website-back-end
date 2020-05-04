@@ -47,7 +47,7 @@ final class PostListAction
     {
         $items = [];
         /** @var Post $Post */
-        foreach ($this->repository->findBy(['is_published' => true]) as $post) {
+        foreach ($this->repository->findByLimit() as $post) {
             $items[] = [
                 'title' => $post->getTitle(),
                 'content' => $post->getContent(),
